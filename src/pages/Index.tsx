@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 
@@ -89,25 +90,44 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <header className="bg-secondary text-secondary-foreground py-16 px-6 mb-12 animate-fade-in">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="font-heading text-5xl md:text-6xl font-bold mb-4">Блог</h1>
-          <p className="text-lg md:text-xl opacity-90 max-w-2xl">
-            Статьи о технологиях, дизайне и разработке
-          </p>
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <div>
+            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-4">Блог</h1>
+            <p className="text-lg md:text-xl opacity-90 max-w-2xl">
+              Статьи о технологиях, дизайне и разработке
+            </p>
+          </div>
+          <Button 
+            onClick={() => navigate('/create')}
+            size="lg"
+            className="hidden md:flex gap-2"
+          >
+            <Icon name="PenSquare" size={20} />
+            Создать статью
+          </Button>
         </div>
       </header>
 
       <main className="max-w-6xl mx-auto px-6 pb-16">
         <div className="mb-10 space-y-6 animate-fade-in">
-          <div className="relative">
-            <Icon name="Search" className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
-            <Input
-              type="text"
-              placeholder="Поиск статей..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-12 h-14 text-lg"
-            />
+          <div className="flex gap-3">
+            <div className="relative flex-1">
+              <Icon name="Search" className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
+              <Input
+                type="text"
+                placeholder="Поиск статей..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-12 h-14 text-lg"
+              />
+            </div>
+            <Button 
+              onClick={() => navigate('/create')}
+              size="lg"
+              className="md:hidden"
+            >
+              <Icon name="Plus" size={20} />
+            </Button>
           </div>
 
           <div className="flex flex-wrap gap-2">
