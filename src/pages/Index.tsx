@@ -19,57 +19,12 @@ interface Article {
 const mockArticles: Article[] = [
   {
     id: 1,
-    title: 'Будущее веб-разработки в 2025 году',
-    excerpt: 'Исследуем новые тренды и технологии, которые изменят подход к созданию веб-приложений в ближайшем будущем.',
-    category: 'Технологии',
-    date: '15 октября 2025',
-    readTime: '5 мин',
+    title: 'Привет, мир!',
+    excerpt: 'Первая статья в блоге',
+    category: 'Разработка',
+    date: '19 октября 2025',
+    readTime: '1 мин',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop'
-  },
-  {
-    id: 2,
-    title: 'Минимализм в дизайне: искусство простоты',
-    excerpt: 'Как создавать впечатляющие интерфейсы, используя принципы минималистичного дизайна и чистую типографику.',
-    category: 'Дизайн',
-    date: '12 октября 2025',
-    readTime: '7 мин',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=400&fit=crop'
-  },
-  {
-    id: 3,
-    title: 'Эффективная работа с TypeScript',
-    excerpt: 'Практические советы и паттерны для написания типобезопасного кода, который легко поддерживать.',
-    category: 'Разработка',
-    date: '8 октября 2025',
-    readTime: '6 мин',
-    image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=400&fit=crop'
-  },
-  {
-    id: 4,
-    title: 'UX исследования: методы и инструменты',
-    excerpt: 'Глубокое погружение в мир пользовательских исследований и методологии создания удобных продуктов.',
-    category: 'Дизайн',
-    date: '5 октября 2025',
-    readTime: '8 мин',
-    image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&h=400&fit=crop'
-  },
-  {
-    id: 5,
-    title: 'Оптимизация производительности React',
-    excerpt: 'Техники и подходы для создания быстрых и отзывчивых приложений на React без компромиссов.',
-    category: 'Разработка',
-    date: '1 октября 2025',
-    readTime: '9 мин',
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop'
-  },
-  {
-    id: 6,
-    title: 'Тренды мобильного дизайна 2025',
-    excerpt: 'Обзор актуальных направлений в дизайне мобильных приложений и прогнозы на следующий год.',
-    category: 'Технологии',
-    date: '28 сентября 2025',
-    readTime: '6 мин',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop'
   }
 ];
 
@@ -89,26 +44,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="bg-secondary text-secondary-foreground py-16 px-6 mb-12 animate-fade-in">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <div>
-            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-4">Блог</h1>
-            <p className="text-lg md:text-xl opacity-90 max-w-2xl">
-              Статьи о технологиях, дизайне и разработке
-            </p>
-          </div>
-          <Button 
-            onClick={() => navigate('/create')}
-            size="lg"
-            className="hidden md:flex gap-2"
-          >
-            <Icon name="PenSquare" size={20} />
-            Создать статью
-          </Button>
-        </div>
-      </header>
-
-      <main className="max-w-6xl mx-auto px-6 pb-16">
+      <main className="max-w-6xl mx-auto px-6 py-16">
         <div className="mb-10 space-y-6 animate-fade-in">
           <div className="flex gap-3">
             <div className="relative flex-1">
