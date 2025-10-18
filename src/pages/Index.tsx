@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -74,6 +75,7 @@ const mockArticles: Article[] = [
 const categories = ['Все', 'Технологии', 'Дизайн', 'Разработка'];
 
 export default function Index() {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Все');
 
@@ -135,6 +137,7 @@ export default function Index() {
                 key={article.id} 
                 className="group cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => navigate(`/article/${article.id}`)}
               >
                 <div className="aspect-video overflow-hidden bg-muted">
                   <img 
